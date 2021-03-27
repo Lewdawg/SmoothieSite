@@ -37,12 +37,12 @@ const checkUser = (req, res, next) => {         //<-- On all requests this middl
     if (token) {
         jwt.verify(token, 'placeHolderSecret', async (err, decodedToken) => {
             if (err) {
-                console.log(err.message);
+                //console.log(err.message);
                 res.locals.user = null;
                 next();
             }
             else {
-                console.log(decodedToken);       //<--This 'decoded' token has the user's Id stored within it.
+                //console.log(decodedToken);       //<--This 'decoded' token has the user's Id stored within it.
                 let user = await User.findById(decodedToken.id);
                 res.locals.user = user;         //<--So if user does exist we can pass it to the views folder and the pages inside of that and access properties from it.
                 next()
