@@ -2,6 +2,8 @@
 
 ### Log in and see the amazing recipes we have!
 
+ - Run nodemon server.js and go to 'http://127.0.0.1:3000/' 
+
 
 #### Languages & Packages
 
