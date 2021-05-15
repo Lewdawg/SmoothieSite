@@ -42,12 +42,12 @@ const signupPost = async (req, res) => {
 
 const loginPost = async (req, res) => {
 
-    const { email, password } = req.body
+    const { email, password } = req.body                         //← Take details users trying to pass
 
     try {
-        const user = await User.loginModel(email, password);
-        const token = tokenGen(user._id);
-        res.cookie('jwtCookie', token, { httpOnly: true, maxAge: maxAge * 1000 })
+        const user = await User.loginModel(email, password);     //← Uses 'loginModel on Schema page
+        const token = tokenGen(user._id);                        //← If successful creates token 
+        res.cookie('jwtCookie', token, { httpOnly: true, maxAge: maxAge * 1000 })  //← Passes token into cookie (maxAge referring to cookie life span)
         res.status(200).json({ user: user.id });
 
     }

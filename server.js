@@ -9,18 +9,17 @@ const app = express();
 //Middleware
 const { requireAuth, checkUser } = require('./middleware/authMiddleware.js');
 
+//Routing
+const authRouter = require('./routes/authRouter.js');
+
+//View engine
+app.set('view engine', 'ejs');
+
 
 //Use-cases    
 app.use(cookieParser());
 app.use(express.static('public'));
 app.use(express.json());
-
-
-//View engine
-app.set('view engine', 'ejs');
-
-//Routing
-const authRouter = require('./routes/authRouter.js');
 
 
 //Port & DB connection

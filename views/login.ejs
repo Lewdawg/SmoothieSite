@@ -28,13 +28,11 @@
 
 
         form.addEventListener('submit', async (e) => {
-            e.preventDefault();                                               //<--Prevents the page from refreshing.
-
+            e.preventDefault();
 
             //Resetting errors on page
             emailError.textContent = "";
             passwordError.textContent = "";
-
 
             //Get values from input's
             const email = form.email.value
@@ -57,14 +55,11 @@
                 if (data.user) {                                                     //<--If the data request does receive a 'user' then redirect them to the home page. 
                     location.assign('/');                                            //<--This is front end redirection.
                 }
-
             }
             catch (err) {
                 console.log(err);
             }
-
         })
-
     </script>
 
     <%- include('partials/footer'); -%>

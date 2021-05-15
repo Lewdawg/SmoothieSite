@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const { isEmail } = require('validator');
+const { isEmail } = require('validator');  //← Is email is part of 'validator' package
 
 const dataSchema = new mongoose.Schema({
     email: {
